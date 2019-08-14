@@ -166,10 +166,6 @@ body {
     font-weight: 700;
 }
 
-.site-logo {
-    max-height: 45px;
-}
-
 .site-description {
     z-index: 10;
     margin: 0;
@@ -197,25 +193,18 @@ body {
     position: relative;
     z-index: 300;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    overflow-y: hidden;
-    height: 40px;
     font-size: 1.2rem;
+    padding: 5px 10px;
 }
 
 .site-nav-left {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
     margin-right: 10px;
-    padding-bottom: 80px;
-    letter-spacing: 0.4px;
-    white-space: nowrap;
-
-    -ms-overflow-scrolling: touch;
 }
 
 /* Site Nav Hack Explanation (above):
@@ -277,9 +266,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .site-nav-right {
     flex-shrink: 0;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
-    height: 40px;
 }
 
 .social-links {
@@ -356,21 +345,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 2.1rem;
     fill: #fff;
 }
-
-@media (max-width: 700px) {
-    .site-header {
-        padding-right: 0;
-        padding-left: 0;
-    }
-    .site-nav-left {
-        margin-right: 0;
-        padding-left: 4vw;
-    }
-    .site-nav-right {
-        display: none;
-    }
-}
-
 
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
@@ -1655,31 +1629,8 @@ Usage (In Ghost editor):
     transform: translate3d(0, 0, 0);
 }
 
-.floating-header-logo {
-    overflow: hidden;
-    margin: 0 0 0 20px;
-    font-size: 1.6rem;
-    line-height: 1em;
-    letter-spacing: -1px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.floating-header-logo a {
-    display: flex;
-    align-items: center;
-    color: var(--darkgrey);
-    line-height: 1.1em;
-    font-weight: 700;
-}
-
-.floating-header-logo a:hover {
-    text-decoration: none;
-}
-
 .floating-header-logo img {
-    margin: 0 10px 0 0;
-    max-height: 20px;
+    margin: 0 10px;
 }
 
 .floating-header-divider {
@@ -1776,11 +1727,11 @@ Usage (In Ghost editor):
 }
 
 .progress::-webkit-progress-value {
-    background-color: var(--blue);
+    background-color: #e5aa3d;
 }
 
 .progress::-moz-progress-bar {
-    background-color: var(--blue);
+    background-color: #e5aa3d;
 }
 
 .progress-container {
@@ -1797,7 +1748,7 @@ Usage (In Ghost editor):
     display: block;
     width: 50%;
     height: inherit;
-    background-color: var(--blue);
+    background-color: #e5aa3d;
 }
 
 @media (max-width: 900px) {
@@ -1831,6 +1782,11 @@ Usage (In Ghost editor):
 
 @media (max-width: 450px) {
     .floating-header-share-label {
+        display: none;
+    }
+}
+@media (max-width: 400px) {
+    .floating-header-share {
         display: none;
     }
 }
